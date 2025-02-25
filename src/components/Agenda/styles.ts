@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const Container = styled.div`
   display: flex;
@@ -23,18 +24,17 @@ export const Titulo = styled.h1`
   display: inline-block;
   z-index: 1;
   line-height: 0.9;
+`;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: -90px;
-    width: 270px;
-    height: 270px;
-    background: linear-gradient(to top left, rgba(30, 218, 255, 0.8), rgba(239, 239, 239, 0.8));
-    border-radius: 50%;
-    z-index: -1;
-  }
+export const Circulo = styled(motion.div)`
+  position: absolute;
+  top: 24%;
+  left: 37%;
+  width: 270px;
+  height: 270px;
+  background: linear-gradient(to top left, rgba(30, 218, 255, 0.8), rgba(239, 239, 239, 0.8));
+  border-radius: 50%;
+  z-index: 0;
 `;
 
 export const ButtonContainer = styled.div`

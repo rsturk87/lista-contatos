@@ -10,7 +10,7 @@ function Agenda() {
         <S.Container>
             {tela === "home" && (
                 <>
-                    <S.Titulo>AGENDA</S.Titulo>
+                    <S.Titulo>AGE<br></br>NDA</S.Titulo>
                     <S.ButtonContainer>
                         <S.Botao onClick={() => setTela("novo")}>Novo Contato</S.Botao>
                         <S.Botao onClick={() => setTela("lista")}>Ver Contatos</S.Botao>

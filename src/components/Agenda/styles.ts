@@ -5,33 +5,33 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Faz o container ocupar a altura total da tela */
+  height: 100vh;
   text-align: center;
   background: #fff;
   padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
-  margin: auto; /* Garante que fica centralizado */
+  width: 100vw;
+  max-width: 1280px;
+  margin: auto;
 `;
 
 export const Titulo = styled.h1`
-  font-size: 40px;
+  font-size: 144px;
   font-weight: bold;
+  font-style: italic;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
   z-index: 1;
+  line-height: 0.9;
 
   &::before {
     content: "";
     position: absolute;
-    top: -10px;
-    left: -20px;
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(to bottom, #70e1f5, #ffd194);
+    top: -50px;
+    left: -90px;
+    width: 270px;
+    height: 270px;
+    background: linear-gradient(to top left, rgba(30, 218, 255, 0.8), rgba(239, 239, 239, 0.8));
     border-radius: 50%;
     z-index: -1;
   }
@@ -52,10 +52,10 @@ export const Botao = styled.button`
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
-  border-radius: 5px;
-  transition: 0.3s;
+  transition: 0.6s;
 
   &:hover {
-    background: #444;
+    background: #1EDAFF;
+    color: #000;
   }
 `;

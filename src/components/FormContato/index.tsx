@@ -8,6 +8,7 @@ function FormContato({ voltar }: { voltar: () => void }) {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [telefone, setTelefone] = useState("");
+    const [isVisible, setIsVisible] = useState(true); // Estado para animação de saída
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,13 +22,18 @@ function FormContato({ voltar }: { voltar: () => void }) {
         };
 
         dispatch(addContact(novoContato));
-        voltar();
+        handleClose(); // Fecha com animação
+    };
+
+    const handleClose = () => {
+        setIsVisible(false); // Inicia a animação de saída
+        setTimeout(voltar, 400); // Espera a animação antes de fechar
     };
 
     return (
-        <S.FormContainer>
-            <S.Fechar onClick={voltar}>✖</S.Fechar>
-            <h2>Novo Contato</h2>
+        <S.FormContainer isVisible={isVisible}>
+            <S.Fechar onClick={handleClose}>✖</S.Fechar>
+            <h2>NOVO CONTATO</h2>
             <form onSubmit={handleSubmit}>
                 <S.Input type="text" placeholder="Nome Completo" value={nome} onChange={(e) => setNome(e.target.value)} />
                 <S.Input type="email" placeholder="E-mail" value={email} onChange={(e) => setEmail(e.target.value)} />

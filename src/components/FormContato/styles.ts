@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const FormContainer = styled.div<{ isVisible: boolean }>`
-  background: linear-gradient(to top left, rgba(30, 218, 255, 0.8), rgba(239, 239, 239, 0.8));
+export const FormContainer = styled(motion.div)`
+  background: linear-gradient(to top left, rgba(30, 218, 255), rgba(239, 239, 239));
   border-radius: 50%;
   padding: 120px;
   text-align: center;
@@ -16,11 +17,6 @@ export const FormContainer = styled.div<{ isVisible: boolean }>`
   position: relative;
   margin: auto;
   gap: 15px;
-
-  transition: opacity 0.6s ease-in-out, transform 0.7s ease-in-out;
-  opacity: ${(props) => (props.isVisible ? "1" : "0")};
-  transform: ${(props) => (props.isVisible ? "scale(1)" : "scale(0.5)")};
-  pointer-events: ${(props) => (props.isVisible ? "all" : "none")};
 
   h2 {
     text-transform: uppercase;
@@ -50,6 +46,7 @@ export const Botao = styled.button`
   font-size: 16px;
   font-weight: bold;
   transition: 0.6s;
+  margin-top: 15px;
 
   &:hover {
     background: #fff;
@@ -70,4 +67,20 @@ export const Fechar = styled.button`
   &:hover {
     transform: scale(1.2);
   }
+`;
+
+export const SucessoMessage = styled.p`
+  color: #2b5e21;
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: bold;
+  text-align: center;
+`;
+
+export const ErroMessage = styled.p`
+  color: #ff6961;
+  font-size: 14px;
+  margin-top: 8px;
+  font-weight: bold;
+  text-align: center;
 `;

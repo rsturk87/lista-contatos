@@ -28,7 +28,7 @@ export const Titulo = styled.h1`
 
 export const Circulo = styled(motion.div)`
   position: absolute;
-  top: 24%;
+  top: 23%;
   left: 37%;
   width: 270px;
   height: 270px;

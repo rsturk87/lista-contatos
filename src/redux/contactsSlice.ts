@@ -7,26 +7,26 @@ interface Contact {
     phone: string;
 }
 
-interface ContactsState {
-    contacts: Contact[];
-}
-
-const initialState: ContactsState = {
-    contacts: [],
-};
+const initialState: Contact[] = [];
 
 const contactsSlice = createSlice({
     name: "contacts",
     initialState,
     reducers: {
         addContact: (state, action: PayloadAction<Contact>) => {
-            state.contacts.push(action.payload);
+            state.push(action.payload);
         },
         removeContact: (state, action: PayloadAction<number>) => {
-            state.contacts = state.contacts.filter(contact => contact.id !== action.payload);
+            return state.filter((contact) => contact.id !== action.payload);
         },
-    },
+        updateContact: (state, action: PayloadAction<Contact>) => {
+            const index = state.findIndex((contact) => contact.id === action.payload.id);
+            if (index !== -1) {
+                state[index] = action.payload;
+            }
+        }
+    }
 });
 
-export const { addContact, removeContact } = contactsSlice.actions;
+export const { addContact, removeContact, updateContact } = contactsSlice.actions;
 export default contactsSlice.reducer;

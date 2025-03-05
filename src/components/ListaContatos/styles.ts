@@ -1,107 +1,115 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-// Container principal da lista de contatos
-export const Container = styled.div`
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-`;
-
-// Lista de contatos
-export const Lista = styled.div`
+export const Container = styled(motion.div)`
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100vh;
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  position: relative;
+  background-color: #fff;
 `;
 
-// Estilização dos itens da lista
-export const Item = styled.div`
-  padding: 15px;
-  border-bottom: 1px solid lightgray;
+export const Titulo = styled.h1`
+  font-size: 64px;
+  font-weight: bold;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-align: left;
+  margin-left: 35px;
+`;
+
+export const BotaoNovo = styled.button`
+  background: black;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 20px 0;
+
+  &:hover {
+    background: #1EDAFF;
+    color: #000;
+  }
+`;
+
+export const Lista = styled.ul`
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 30px;
+`;
+
+export const Item = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
 `;
 
-// Estilização para os detalhes de cada contato
 export const Dados = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+
+  strong {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  p {
+    font-size: 14px;
+    color: gray;
+    font-style: italic;
+    text-align: left;
+  }
 `;
 
-// Botões de ações dentro da lista de contatos
 export const Botoes = styled.div`
   display: flex;
   gap: 10px;
 `;
 
-// Botão de exclusão
-export const BotaoExcluir = styled.button`
-  background: red;
-  color: white;
+export const BotaoIcone = styled.button`
+  background: none;
   border: none;
-  padding: 8px 12px;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
-  font-weight: bold;
   transition: 0.3s;
-  border-radius: 5px;
 
   &:hover {
-    background: darkred;
+    transform: scale(1.2);
   }
 `;
 
-// Botão de edição
-export const BotaoEditar = styled.button`
-  background: #ffcc00;
-  color: black;
+export const Fechar = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
   border: none;
-  padding: 8px 12px;
-  font-size: 14px;
+  font-size: 40px;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-  border-radius: 5px;
+
+  transition: 0.2s ease-in-out;
 
   &:hover {
-    background: #e6b800;
+    transform: scale(1.2);
   }
 `;
 
-// Botão de ação geral
-export const Botao = styled.button`
-  background: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  transition: 0.3s;
-  border-radius: 5px;
-
-  &:hover {
-    background: #1edaff;
-    color: black;
-  }
-`;
-
-// Formulário de edição dentro da lista de contatos
-export const EditForm = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
-
-// Input para edição de contatos
 export const Input = styled.input`
   width: 100%;
   padding: 10px;
@@ -109,13 +117,34 @@ export const Input = styled.input`
   border-radius: 5px;
 `;
 
-// Botão de fechar
-export const Fechar = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
+export const EditForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
+`;
+
+export const Botao = styled.button`
   background: none;
   border: none;
-  font-size: 20px;
   cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
+
+  &:hover {
+    color: #1edaff;
+  }
+
+  svg {
+    font-size: 18px;
+  }
 `;
